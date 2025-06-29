@@ -21,7 +21,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
 	UBoxComponent* TriggerBox;
 
-	
+	UPROPERTY(BlueprintReadOnly, Transient)
+	AStellarControllableClass* CollisionInstance = nullptr;
 public:
 	// Sets default values for this actor's properties
 	AStellarContainVehicle();

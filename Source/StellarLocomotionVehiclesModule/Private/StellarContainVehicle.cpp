@@ -30,6 +30,31 @@ void AStellarContainVehicle::BeginPlay()
 {
 	Super::BeginPlay();
 
+
+	// FActorSpawnParameters SpawnParams;
+	// SpawnParams.Owner = this;
+	// SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+	//
+	// FVector SpawnLocation = GetActorLocation() + FVector(0,0,1000); // or any location
+	// FRotator SpawnRotation = FRotator::ZeroRotator;
+	//
+	// UClass* ClassToUse = GetClass();
+	//
+	// if (ClassToUse->IsChildOf(AStellarContainVehicle::StaticClass()))
+	// {
+	// 	AActor* Instance = GetWorld()->SpawnActor<AActor>(
+	// 		ClassToUse,
+	// 		SpawnLocation,
+	// 		SpawnRotation,
+	// 		SpawnParams
+	// 	);
+	//
+	// 	CollisionInstance = Cast<AStellarContainVehicle>(Instance);
+	// }
+	// else
+	// {
+	// }
+	
 	TriggerBox->OnComponentBeginOverlap.AddDynamic(this, &AStellarContainVehicle::OnOverlapBegin);
 	TriggerBox->OnComponentEndOverlap.AddDynamic(this, &AStellarContainVehicle::OnOverlapEnd);
 }
